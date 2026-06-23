@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../models/conversation_model.dart';
+import '../../models/sentence_model.dart' show DifficultyLevel;
 import '../../services/conversation_data.dart';
 
 class ConversationScreen extends StatelessWidget {
@@ -126,7 +127,7 @@ class _ConversationCategoryCard extends StatelessWidget {
   IconData _getCategoryIcon(String categoryId) {
     switch (categoryId) {
       case 'daily_standup':
-        return Icons.daily_routine;
+        return Icons.event_note;
       case 'code_review':
         return Icons.code;
       case 'team_meeting':

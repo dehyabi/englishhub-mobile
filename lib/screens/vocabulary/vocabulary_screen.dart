@@ -3,8 +3,10 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../services/learning_provider.dart';
 import '../../models/models.dart';
+import '../../utils/app_theme.dart';
 import 'widgets/vocabulary_card.dart';
 import 'widgets/vocabulary_filter.dart';
+import '../quiz/quiz_screen.dart';
 
 class VocabularyScreen extends StatefulWidget {
   const VocabularyScreen({super.key});

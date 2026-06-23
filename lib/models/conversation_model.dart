@@ -1,3 +1,5 @@
+import 'sentence_model.dart' show DifficultyLevel;
+
 /// Represents a conversation scenario for practice
 class Conversation {
   final String id;

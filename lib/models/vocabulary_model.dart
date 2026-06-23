@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'user_progress_model.dart';
 
 /// Represents a vocabulary word with English-Indonesian translation
 class VocabularyWord {
@@ -6,7 +7,7 @@ class VocabularyWord {
   final String english;
   final String indonesian;
   final String pronunciation;
-  final String category; // e.g., 'frontend', 'backend', 'ai', 'daily'
+  final String category;
   final String? exampleSentence;
   final String? exampleSentenceIndonesian;
   final List<String> synonyms;

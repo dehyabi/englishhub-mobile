@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'vocabulary_model.dart';
 
 /// User's overall learning progress
 class UserProgress {
@@ -151,7 +152,7 @@ class VocabularyProgress {
     final newAccuracy = newCorrect / newReviewCount;
 
     // Adjust ease factor and interval based on SM-2 algorithm
-    int newEaseFactor = easeFactor;
+    double newEaseFactor = easeFactor.toDouble();
     int newInterval = intervalDays;
     MasteryLevel newMasteryLevel = masteryLevel;
 
@@ -383,21 +384,4 @@ class NotificationTime {
   final int minute;
 
   const NotificationTime({required this.hour, required this.minute});
-}
-
-/// Mastery levels (shared with vocabulary_model)
-enum MasteryLevel {
-  newbie(0, 'Newbie', 'Pemula', Colors.grey),
-  learning(1, 'Learning', 'Belajar', Colors.blue),
-  familiar(2, 'Familiar', 'Akrab', Colors.green),
-  proficient(3, 'Proficient', 'Mahir', Colors.orange),
-  master(4, 'Master', 'Master', Colors.red);
-
-  final int value;
-  final String label;
-  final String indonesianLabel;
-  final Color color;
-
-  const MasteryLevel(
-      this.value, this.label, this.indonesianLabel, this.color);
 }

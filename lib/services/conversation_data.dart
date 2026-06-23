@@ -1,4 +1,5 @@
 import '../models/conversation_model.dart';
+import '../models/sentence_model.dart' show DifficultyLevel;
 
 /// Business and tech conversation scenarios
 class ConversationData {

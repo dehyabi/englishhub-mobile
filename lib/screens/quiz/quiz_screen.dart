@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../services/learning_provider.dart';
 import '../../models/models.dart';
+import '../../utils/app_theme.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});

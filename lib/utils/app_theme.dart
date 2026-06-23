@@ -48,10 +48,9 @@ class AppTheme {
       surface: surfaceColor,
       error: error,
     ),
-    textTheme: GoogleFonts.interTextTheme(
-      primary: textPrimary,
-      bodyLarge: const TextStyle(color: textPrimary),
-      bodyMedium: const TextStyle(color: textSecondary),
+    textTheme: GoogleFonts.interTextTheme().copyWith(
+      bodyLarge: TextStyle(color: textPrimary),
+      bodyMedium: TextStyle(color: textSecondary),
     ),
     appBarTheme: AppBarTheme(
       backgroundColor: surfaceColor,
@@ -117,8 +116,7 @@ class AppTheme {
       surface: Color(0xFF1E293B),
       error: error,
     ),
-    textTheme: GoogleFonts.interTextTheme(
-      primary: Colors.white,
+    textTheme: GoogleFonts.interTextTheme().copyWith(
       bodyLarge: const TextStyle(color: Colors.white),
       bodyMedium: const TextStyle(color: Color(0xFF94A3B8)),
     ),

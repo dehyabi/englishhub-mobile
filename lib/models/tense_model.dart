@@ -465,7 +465,7 @@ class TensesData {
           ],
           signalWords: ['by next year', 'for X years by'],
           indonesianSignalWords: ['pada', 'selama'],
-          color: Colors cyan,
+          color: Colors.cyan,
         ),
       ];
 }

@@ -43,7 +43,7 @@ class TensesScreen extends StatelessWidget {
           _TenseSection(
             title: 'Future Tenses',
             indonesianTitle: 'Masa Depan',
-            icon: Icons.future,
+            icon: Icons.arrow_forward,
             color: Colors.green,
             tenses: futureTenses,
           ),
@@ -174,7 +174,6 @@ class _TenseCard extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'monospace',
                 ),
               ),
             ],
@@ -353,7 +352,6 @@ class _InfoSection extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: isFormula ? FontWeight.w600 : FontWeight.normal,
-                  fontFamily: isFormula ? 'monospace' : null,
                 ),
               ),
               if (indonesianContent != null) ...[
