@@ -85,24 +85,12 @@ class HomeContent extends StatelessWidget {
             // App Bar
             SliverAppBar(
               floating: true,
-              title: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'EnglishHub',
-                    style: GoogleFonts.inter(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'Learn English for Tech',
-                    style: GoogleFonts.inter(
-                      fontSize: 12,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                ],
+              title: Text(
+                'EnglishHub',
+                style: GoogleFonts.inter(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               actions: [
                 IconButton(
