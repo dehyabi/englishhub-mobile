@@ -40,6 +40,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+android/.gradle/
+android/local.properties
+build/
+*.apk
+*.aab
 
 # iOS related
 /ios/.symlinks/
@@ -53,3 +58,8 @@ app.*.map.json
 # Environment
 .env
 .env.*
+
+# Generated launcher icons
+android/app/src/main/res/mipmap-*
+android/app/src/main/res/drawable/launch_background.xml
+android/app/src/main/res/values/styles.xml
