@@ -15,11 +15,21 @@ class VocabularyFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final shortNames = {
+      'frontend': 'Frontend',
+      'backend': 'Backend',
+      'ai': 'AI/ML',
+      'devops': 'DevOps',
+      'database': 'Database',
+      'api': 'API',
+      'daily': 'Daily',
+      'business': 'Business',
+    };
     final categories = [
       const FilterOption(id: 'all', label: 'All', icon: Icons.all_inclusive),
       ...VocabularyCategory.allCategories.map((cat) => FilterOption(
         id: cat.id,
-        label: cat.name,
+        label: shortNames[cat.id] ?? cat.name,
         icon: cat.icon,
         color: cat.color,
       )),
