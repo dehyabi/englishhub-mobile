@@ -51,7 +51,7 @@ class LearningProvider extends ChangeNotifier {
         'category': cat,
         'total': count,
         'learned': learned,
-        'percentage': count > 0 ? (learned / count) * 100 : 0,
+        'percentage': count > 0 ? (learned / count) * 100 : 0.0,
       };
     }).toList();
   }
@@ -196,8 +196,8 @@ class LearningProvider extends ChangeNotifier {
       'correctAnswers': correctToday,
       'dailyGoal': _userProgress?.preferences.dailyGoal ?? 10,
       'percentage': _userProgress != null
-        ? (wordsReviewedToday / _userProgress!.preferences.dailyGoal * 100).clamp(0, 100)
-        : 0,
+        ? (wordsReviewedToday / _userProgress!.preferences.dailyGoal * 100).clamp(0.0, 100.0)
+        : 0.0,
     };
   }
 }

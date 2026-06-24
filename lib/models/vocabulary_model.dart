@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'user_progress_model.dart';
 
 /// Represents a vocabulary word with English-Indonesian translation
 class VocabularyWord {

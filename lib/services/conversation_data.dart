@@ -180,7 +180,7 @@ class ConversationData {
               notes: [
                 const MessageNote(
                   content: '"One question though" is a polite way to introduce a question',
-                  type: NoteType.expression,
+                  type: NoteType.tip,
                 ),
               ],
             ),
@@ -194,7 +194,7 @@ class ConversationData {
               notes: [
                 const MessageNote(
                   content: '"Good catch!" is common praise when someone spots an issue',
-                  type: NoteType.expression,
+                  type: NoteType.tip,
                 ),
               ],
             ),
@@ -501,7 +501,7 @@ class ConversationData {
               title: 'Clarifying Questions',
               explanation: 'In system design interviews, always ask clarifying questions first: scale, requirements, constraints',
               indonesianExplanation: 'Dalam wawancara desain sistem, selalu ajukan pertanyaan klarifikasi terlebih dahulu: skala, persyaratan, batasan',
-              type: LearningPointType.tip,
+              type: LearningPointType.grammar,
             ),
             LearningPoint(
               title: 'Technical Vocabulary',
@@ -511,6 +511,428 @@ class ConversationData {
             ),
           ],
           vocabulary: ['performance', 'optimized', 'indexes', 'caching', 'refactored', 'scale', 'requirements'],
+        ),
+
+        // TEAM MEETING
+        Conversation(
+          id: 'conv_006',
+          title: 'Sprint Planning Meeting',
+          indonesianTitle: 'Rapat Perencanaan Sprint',
+          description: 'Planning the next sprint with your team',
+          category: 'team_meeting',
+          scenario: const ConversationScenario(
+            location: 'Meeting Room / Video Call',
+            indonesianLocation: 'Ruang Rapat / Panggilan Video',
+            context: 'Sprint planning meeting to decide next iteration tasks',
+            participants: ['You (Developer)', 'Anna (Scrum Master)', 'Ravi (Product Owner)'],
+            goal: 'Plan the sprint backlog and agree on commitments',
+          ),
+          difficulty: DifficultyLevel.intermediate,
+          duration: 420,
+          messages: [
+            const ConversationMessage(
+              id: 'm1',
+              speaker: 'Anna',
+              speakerRole: 'Scrum Master',
+              english: 'Alright team, let\'s start our sprint planning. We have 15 story points capacity this sprint. Ravi, what are the priorities?',
+              indonesian: 'Baik tim, mari mulai perencanaan sprint kita. Kami memiliki kapasitas 15 story point sprint ini. Ravi, apa prioritasnya?',
+              type: MessageType.greeting,
+            ),
+            const ConversationMessage(
+              id: 'm2',
+              speaker: 'Ravi',
+              speakerRole: 'Product Owner',
+              english: 'The top priority is the payment integration feature. We also need to fix the search bug that users have been reporting.',
+              indonesian: 'Prioritas utama adalah fitur integrasi pembayaran. Kami juga perlu memperbaiki bug pencarian yang telah dilaporkan pengguna.',
+              type: MessageType.normal,
+            ),
+            const ConversationMessage(
+              id: 'm3',
+              speaker: 'You',
+              speakerRole: 'Developer',
+              english: 'The payment integration is about 8 story points. For the search bug, I\'d estimate 3 points since I\'ve already looked into it.',
+              indonesian: 'Integrasi pembayaran sekitar 8 story point. Untuk bug pencarian, saya perkirakan 3 point karena saya sudah melihatnya.',
+              type: MessageType.response,
+              notes: [
+                const MessageNote(
+                  content: '"I\'d estimate" is polite and shows the estimate is approximate',
+                  type: NoteType.tip,
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm4',
+              speaker: 'Anna',
+              speakerRole: 'Scrum Master',
+              english: 'That leaves us with 4 points. Should we take on the dashboard redesign or keep some buffer?',
+              indonesian: 'Itu menyisakan kita 4 point. Haruskah kita mengambil redesign dashboard atau menyimpan beberapa buffer?',
+              type: MessageType.question,
+            ),
+            const ConversationMessage(
+              id: 'm5',
+              speaker: 'You',
+              speakerRole: 'Developer',
+              english: 'I\'d suggest keeping a buffer. The payment integration might have some unexpected complexity, and we don\'t want to overcommit.',
+              indonesian: 'Saya sarankan menyimpan buffer. Integrasi pembayaran mungkin memiliki beberapa kompleksitas tak terduga, dan kita tidak ingin terlalu berkomitmen.',
+              type: MessageType.suggestion,
+              notes: [
+                const MessageNote(
+                  content: '"We don\'t want to overcommit" is a professional way to set realistic expectations',
+                  type: NoteType.tip,
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm6',
+              speaker: 'Ravi',
+              speakerRole: 'Product Owner',
+              english: 'Fair point. Let\'s keep 4 points as buffer. We can always pull in more tasks if we finish early.',
+              indonesian: 'Poin yang masuk akal. Mari simpan 4 point sebagai buffer. Kita selalu bisa menarik lebih banyak tugas jika kita selesai lebih awal.',
+              type: MessageType.response,
+            ),
+          ],
+          learningPoints: const [
+            LearningPoint(
+              title: 'Sprint Planning Vocabulary',
+              explanation: 'Story points, capacity, sprint backlog, buffer, overcommit - key agile terms',
+              indonesianExplanation: 'Story points, capacity, sprint backlog, buffer, overcommit - istilah agile penting',
+              type: LearningPointType.vocabulary,
+            ),
+            LearningPoint(
+              title: 'Making Estimates',
+              explanation: 'Use "I\'d estimate" or "about" to show estimates are approximate, not guarantees',
+              indonesianExplanation: 'Gunakan "I\'d estimate" atau "about" untuk menunjukkan estimasi bersifat perkiraan, bukan jaminan',
+              type: LearningPointType.expression,
+            ),
+            LearningPoint(
+              title: 'Setting Realistic Expectations',
+              explanation: '"We don\'t want to overcommit" and "keeping a buffer" show responsible planning',
+              indonesianExplanation: '"We don\'t want to overcommit" dan "keeping a buffer" menunjukkan perencanaan yang bertanggung jawab',
+              type: LearningPointType.expression,
+            ),
+          ],
+          vocabulary: ['sprint', 'story points', 'capacity', 'backlog', 'buffer', 'overcommit', 'priorities'],
+        ),
+
+        // PAIR PROGRAMMING
+        Conversation(
+          id: 'conv_007',
+          title: 'Pair Programming Session',
+          indonesianTitle: 'Sesi Pemrograman Berpasangan',
+          description: 'Collaborating with a colleague on a feature',
+          category: 'pair_programming',
+          scenario: const ConversationScenario(
+            location: 'Desk / Screen Share',
+            indonesianLocation: 'Meja / Berbagi Layar',
+            context: 'Pair programming to implement a new feature together',
+            participants: ['You (Driver)', 'Jordan (Navigator)'],
+            goal: 'Implement a new feature while communicating effectively',
+          ),
+          difficulty: DifficultyLevel.elementary,
+          duration: 300,
+          messages: [
+            const ConversationMessage(
+              id: 'm1',
+              speaker: 'Jordan',
+              speakerRole: 'Navigator',
+              english: 'So for this function, I think we should validate the input first before processing it. What do you think?',
+              indonesian: 'Jadi untuk fungsi ini, saya pikir kita harus memvalidasi input terlebih dahulu sebelum memprosesnya. Apa pendapatmu?',
+              type: MessageType.suggestion,
+            ),
+            const ConversationMessage(
+              id: 'm2',
+              speaker: 'You',
+              speakerRole: 'Driver',
+              english: 'Good idea. I\'ll add a guard clause at the top to check for null values. Should we also check the format?',
+              indonesian: 'Ide bagus. Saya akan menambahkan guard clause di atas untuk memeriksa nilai null. Haruskah kita juga memeriksa formatnya?',
+              type: MessageType.response,
+              notes: [
+                const MessageNote(
+                  content: '"Guard clause" = early return pattern to handle edge cases',
+                  type: NoteType.vocabulary,
+                  highlightedWord: 'guard clause',
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm3',
+              speaker: 'Jordan',
+              speakerRole: 'Navigator',
+              english: 'Yes, let\'s validate the email format too. We can use a regex for that.',
+              indonesian: 'Ya, mari validasi format email juga. Kita bisa menggunakan regex untuk itu.',
+              type: MessageType.response,
+            ),
+            const ConversationMessage(
+              id: 'm4',
+              speaker: 'You',
+              speakerRole: 'Driver',
+              english: 'Got it. I\'m writing the validation logic now. Can you check the naming convention? I want to make sure we\'re consistent with the rest of the codebase.',
+              indonesian: 'Mengerti. Saya sedang menulis logika validasi sekarang. Bisakah kamu memeriksa konvensi penamaan? Saya ingin memastikan kita konsisten dengan sisa codebase.',
+              type: MessageType.normal,
+              notes: [
+                const MessageNote(
+                  content: '"Consistent with the codebase" - important principle in team coding',
+                  type: NoteType.tip,
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm5',
+              speaker: 'Jordan',
+              speakerRole: 'Navigator',
+              english: 'Looks good! One small thing - maybe rename "data" to "userPayload" for clarity. Also, I noticed we\'re not handling the error case. Should we add a try-catch?',
+              indonesian: 'Terlihat bagus! Satu hal kecil - mungkin ganti nama "data" menjadi "userPayload" untuk kejelasan. Juga, saya perhatikan kita tidak menangani kasus error. Haruskah kita menambahkan try-catch?',
+              type: MessageType.suggestion,
+            ),
+            const ConversationMessage(
+              id: 'm6',
+              speaker: 'You',
+              speakerRole: 'Driver',
+              english: 'You\'re right, let me add that. I\'ll wrap it in a try-catch and throw a custom error if validation fails.',
+              indonesian: 'Kamu benar, biarkan saya menambahkannya. Saya akan membungkusnya dalam try-catch dan melempar error kustom jika validasi gagal.',
+              type: MessageType.response,
+            ),
+          ],
+          learningPoints: const [
+            LearningPoint(
+              title: 'Pair Programming Roles',
+              explanation: 'Driver writes code, Navigator reviews and suggests. Switch roles regularly',
+              indonesianExplanation: 'Driver menulis kode, Navigator meninjau dan memberi saran. Tukar peran secara teratur',
+              type: LearningPointType.vocabulary,
+            ),
+            LearningPoint(
+              title: 'Collaborative Language',
+              explanation: '"What do you think?", "Should we...?", "Let\'s..." - inclusive language for teamwork',
+              indonesianExplanation: '"What do you think?", "Should we...?", "Let\'s..." - bahasa inklusif untuk kerja tim',
+              type: LearningPointType.expression,
+            ),
+            LearningPoint(
+              title: 'Code Review During Pairing',
+              explanation: '"One small thing", "I noticed...", "Maybe rename..." - gentle suggestion patterns',
+              indonesianExplanation: '"One small thing", "I noticed...", "Maybe rename..." - pola saran yang lembut',
+              type: LearningPointType.expression,
+            ),
+          ],
+          vocabulary: ['guard clause', 'validate', 'regex', 'naming convention', 'codebase', 'try-catch', 'custom error'],
+        ),
+
+        // BUG DISCUSSION
+        Conversation(
+          id: 'conv_008',
+          title: 'Bug Triage Discussion',
+          indonesianTitle: 'Diskusi Triage Bug',
+          description: 'Discussing and prioritizing bugs with the team',
+          category: 'bug_discussion',
+          scenario: const ConversationScenario(
+            location: 'Slack / Team Chat',
+            indonesianLocation: 'Slack / Obrolan Tim',
+            context: 'Team discussing a critical production bug',
+            participants: ['You (Developer)', 'Sam (QA Engineer)', 'Nina (DevOps)'],
+            goal: 'Identify the root cause and assign the fix',
+          ),
+          difficulty: DifficultyLevel.intermediate,
+          duration: 360,
+          messages: [
+            const ConversationMessage(
+              id: 'm1',
+              speaker: 'Sam',
+              speakerRole: 'QA Engineer',
+              english: 'We have a P1 bug - users are getting a 500 error when they try to checkout. It started about 30 minutes ago.',
+              indonesian: 'Kami punya bug P1 - pengguna mendapatkan error 500 ketika mereka mencoba checkout. Itu dimulai sekitar 30 menit lalu.',
+              type: MessageType.normal,
+              notes: [
+                const MessageNote(
+                  content: 'P1 = Priority 1, the highest priority level for bugs',
+                  type: NoteType.vocabulary,
+                  highlightedWord: 'P1',
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm2',
+              speaker: 'You',
+              speakerRole: 'Developer',
+              english: 'I\'ll take a look right away. Is it happening for all users or just a specific region?',
+              indonesian: 'Saya akan segera melihatnya. Apakah itu terjadi untuk semua pengguna atau hanya wilayah tertentu?',
+              type: MessageType.response,
+            ),
+            const ConversationMessage(
+              id: 'm3',
+              speaker: 'Sam',
+              speakerRole: 'QA Engineer',
+              english: 'It seems to be affecting all users. The error logs show a timeout on the payment gateway connection.',
+              indonesian: 'Sepertinya mempengaruhi semua pengguna. Log error menunjukkan timeout pada koneksi gateway pembayaran.',
+              type: MessageType.normal,
+            ),
+            const ConversationMessage(
+              id: 'm4',
+              speaker: 'Nina',
+              speakerRole: 'DevOps',
+              english: 'I just checked - the payment gateway API is indeed having issues on their end. Their status page confirms an ongoing incident.',
+              indonesian: 'Saya baru saja memeriksa - API gateway pembayaran memang memiliki masalah di pihak mereka. Halaman status mereka mengonfirmasi insiden yang sedang berlangsung.',
+              type: MessageType.normal,
+            ),
+            const ConversationMessage(
+              id: 'm5',
+              speaker: 'You',
+              speakerRole: 'Developer',
+              english: 'OK, so it\'s an external dependency issue. I\'ll add a fallback mechanism so if the gateway times out, we show a retry option instead of a 500 error.',
+              indonesian: 'OK, jadi ini masalah dependensi eksternal. Saya akan menambahkan mekanisme fallback jadi jika gateway timeout, kita tampilkan opsi coba lagi alih-alih error 500.',
+              type: MessageType.suggestion,
+              notes: [
+                const MessageNote(
+                  content: '"Fallback mechanism" = backup system when the primary fails',
+                  type: NoteType.vocabulary,
+                  highlightedWord: 'fallback mechanism',
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm6',
+              speaker: 'Nina',
+              speakerRole: 'DevOps',
+              english: 'Good plan. I\'ll also set up an alert so we get notified immediately if the gateway goes down again.',
+              indonesian: 'Rencana yang bagus. Saya juga akan menyiapkan peringatan agar kami segera diberitahu jika gateway down lagi.',
+              type: MessageType.response,
+            ),
+          ],
+          learningPoints: const [
+            LearningPoint(
+              title: 'Bug Priority Levels',
+              explanation: 'P1 = Critical/Blocking, P2 = High, P3 = Medium, P4 = Low - standard priority classification',
+              indonesianExplanation: 'P1 = Kritis/Menghalangi, P2 = Tinggi, P3 = Sedang, P4 = Rendah - klasifikasi prioritas standar',
+              type: LearningPointType.vocabulary,
+            ),
+            LearningPoint(
+              title: 'Investigating Bugs',
+              explanation: '"Is it happening for all users?", "The error logs show...", "I just checked" - investigation phrases',
+              indonesianExplanation: '"Is it happening for all users?", "The error logs show...", "I just checked" - frasa investigasi',
+              type: LearningPointType.expression,
+            ),
+            LearningPoint(
+              title: 'Proposing Solutions',
+              explanation: '"I\'ll add a fallback mechanism", "Good plan", "I\'ll also set up an alert" - action-oriented responses',
+              indonesianExplanation: '"I\'ll add a fallback mechanism", "Good plan", "I\'ll also set up an alert" - respons berorientasi tindakan',
+              type: LearningPointType.expression,
+            ),
+          ],
+          vocabulary: ['P1 bug', '500 error', 'checkout', 'timeout', 'payment gateway', 'fallback', 'alert', 'incident'],
+        ),
+
+        // CASUAL CHAT
+        Conversation(
+          id: 'conv_009',
+          title: 'Coffee Break Chat',
+          indonesianTitle: 'Obrolan Istirahat Kopi',
+          description: 'Informal conversation with a colleague during break',
+          category: 'casual_chat',
+          scenario: const ConversationScenario(
+            location: 'Office Kitchen / Chat App',
+            indonesianLocation: 'Dapur Kantor / Aplikasi Chat',
+            context: 'Casual conversation during a coffee break at work',
+            participants: ['You', 'Emma (Colleague)'],
+            goal: 'Practice casual workplace small talk',
+          ),
+          difficulty: DifficultyLevel.beginner,
+          duration: 180,
+          messages: [
+            const ConversationMessage(
+              id: 'm1',
+              speaker: 'Emma',
+              speakerRole: 'Colleague',
+              english: 'Hey! How\'s it going? I haven\'t seen you around this week.',
+              indonesian: 'Hei! Bagaimana kabarmu? Saya belum melihatmu minggu ini.',
+              type: MessageType.greeting,
+              notes: [
+                const MessageNote(
+                  content: '"How\'s it going?" is a casual way to ask "How are you?"',
+                  type: NoteType.tip,
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm2',
+              speaker: 'You',
+              speakerRole: 'Developer',
+              english: 'Hey Emma! Yeah, I\'ve been swamped with the new feature launch. Finally getting a breather today.',
+              indonesian: 'Hei Emma! Ya, saya sudah kewalahan dengan peluncuran fitur baru. Akhirnya bisa bernapas hari ini.',
+              type: MessageType.response,
+              notes: [
+                const MessageNote(
+                  content: '"Swamped" = very busy. "Getting a breather" = having a short rest',
+                  type: NoteType.vocabulary,
+                  highlightedWord: 'swamped',
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm3',
+              speaker: 'Emma',
+              speakerRole: 'Colleague',
+              english: 'Oh nice! Is that the AI search thing? I heard the demo was really impressive.',
+              indonesian: 'Oh bagus! Apakah itu halaman pencarian AI? Saya dengar demonya sangat mengesankan.',
+              type: MessageType.normal,
+            ),
+            const ConversationMessage(
+              id: 'm4',
+              speaker: 'You',
+              speakerRole: 'Developer',
+              english: 'That\'s the one! It was a lot of work, but the team really pulled together. By the way, did you catch the game last night?',
+              indonesian: 'Itu dia! Banyak kerja keras, tapi tim benar-benar bersatu. Ngomong-ngomong, apakah kamu menonton pertandingan tadi malam?',
+              type: MessageType.normal,
+              notes: [
+                const MessageNote(
+                  content: '"Pulled together" = worked well as a team. "By the way" transitions to a new topic',
+                  type: NoteType.vocabulary,
+                  highlightedWord: 'pulled together',
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm5',
+              speaker: 'Emma',
+              speakerRole: 'Colleague',
+              english: 'I did! That last-minute goal was insane. Anyway, we should grab lunch sometime this week. I want to hear more about the project!',
+              indonesian: 'Iya! Gol menit terakhir itu gila. Ngomong-ngomong, kita harus makan siang suatu hari minggu ini. Saya ingin mendengar lebih banyak tentang proyek itu!',
+              type: MessageType.normal,
+              notes: [
+                const MessageNote(
+                  content: '"We should grab lunch" = casual invitation to eat together',
+                  type: NoteType.tip,
+                  highlightedWord: 'grab lunch',
+                ),
+              ],
+            ),
+            const ConversationMessage(
+              id: 'm6',
+              speaker: 'You',
+              speakerRole: 'Developer',
+              english: 'Absolutely, let\'s do Thursday! I know a great ramen place near the office.',
+              indonesian: 'Tentu, mari lakukan hari Kamis! Saya tahu tempat ramen yang bagus dekat kantor.',
+              type: MessageType.response,
+            ),
+          ],
+          learningPoints: const [
+            LearningPoint(
+              title: 'Casual Greetings',
+              explanation: '"How\'s it going?", "What\'s up?", "How are things?" - informal workplace greetings',
+              indonesianExplanation: '"How\'s it going?", "What\'s up?", "How are things?" - sapaan informal di tempat kerja',
+              type: LearningPointType.expression,
+            ),
+            LearningPoint(
+              title: 'Informal Idioms',
+              explanation: '"Swamped" (very busy), "pull together" (work as a team), "grab lunch" (eat together casually)',
+              indonesianExplanation: '"Swamped" (sangat sibuk), "pull together" (bekerja sebagai tim), "grab lunch" (makan bersama secara santai)',
+              type: LearningPointType.vocabulary,
+            ),
+            LearningPoint(
+              title: 'Topic Transitions',
+              explanation: '"By the way", "Anyway", "Speaking of..." - natural ways to change the subject',
+              indonesianExplanation: '"By the way", "Anyway", "Speaking of..." - cara alami untuk mengganti topik',
+              type: LearningPointType.expression,
+            ),
+          ],
+          vocabulary: ['swamped', 'breather', 'pulled together', 'grab lunch', 'insane', 'by the way', 'anyway'],
         ),
       ];
 
